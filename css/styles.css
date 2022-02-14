@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+}
+
+.white {
+  color: white;
+}
+
+.purple-background {
+  background-color: rgb(94, 16, 81);
+}
+
+.font-size-150 {
+  font-size: 150%;
+}
+
+.padding-left-3-rem {
+  padding-left: 3rem;
+}
+
+.padding-top-2-rem {
+  padding-top: 2rem;
+}
+
+.padding-bot-1-rem {
+  padding-bottom: 1rem;
+}

@@ -15,11 +15,33 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
+  <header class="white purple-background font-size-150 container padding-top-2-rem padding-bot-1-rem">
+    Code Journal
   </header>
   <main>
     <div data-view="entry-form">
-
+      <div class="container">
+        <form>
+          <div class="row">
+            <div class="column-full">
+              <h1>New Entry</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-half">
+              <img src="images/placeholder-image-square.jpg" alt="placeholder image">
+            </div>
+            <div class="column-half">
+              <div class="row">
+                <input type="text" id="photo" name="photo-url">
+              </div>
+              <div class="row">
+                <input type="text" id="title" name="title_text">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </main>
   <script src="js/data.js"></script>
