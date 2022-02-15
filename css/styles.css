@@ -18,6 +18,10 @@ body {
   font-size: 120%;
 }
 
+.font-size-200 {
+  font-size: 200%;
+}
+
 .margin-bot-2-rem {
   margin-bottom: 2rem;
 }
@@ -78,6 +82,10 @@ textarea {
 textarea:focus,
 input:focus {
   outline-color: rgb(109, 21, 109);
+}
+
+ul {
+  margin-left: -2.5rem;
 }
 
 .button {
