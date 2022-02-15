@@ -31,7 +31,8 @@ function store(e) {
   data.nextEntryId++;
   data.entries.unshift(newObject);
   var appendNewObject = addEntry(newObject);
-  document.querySelector('ul').appendChild(appendNewObject);
+  var $unorderedList = document.querySelector('ul');
+  $unorderedList.prepend(appendNewObject);
   reset();
   resetInputs();
   $entryForm.className = 'inactive';
