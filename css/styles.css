@@ -18,8 +18,20 @@ body {
   font-size: 120%;
 }
 
+.font-size-200 {
+  font-size: 200%;
+}
+
 .margin-bot-2-rem {
   margin-bottom: 2rem;
+}
+
+.margin-top-2-rem {
+  margin-top: 2rem;
+}
+
+.margin-left {
+  margin-left: 2rem;
 }
 
 .padding-top-1-rem {
@@ -50,6 +62,18 @@ body {
   justify-content: right;
 }
 
+.align-items-center {
+  align-items: center;
+}
+
+.new-entry-tab {
+  padding: 8px 20px;
+}
+
+.new-entry-tab:hover {
+  cursor: pointer;
+}
+
 label {
   flex-basis: 100%;
 }
@@ -76,6 +100,10 @@ input:focus {
   outline-color: rgb(109, 21, 109);
 }
 
+ul {
+  margin-left: -2.5rem;
+}
+
 .button {
   padding: 0.3rem 1rem;
   margin-bottom: 2rem;
@@ -85,5 +113,18 @@ input:focus {
 }
 
 .button:hover {
+  cursor: pointer;
+}
+
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}
+
+.entries-tab:hover {
+  color: rgb(240, 222, 206);
   cursor: pointer;
 }

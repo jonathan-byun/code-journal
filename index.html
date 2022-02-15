@@ -15,11 +15,12 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header class="white purple-background font-size-150 container padding-top-2-rem padding-bot-1-rem">
+  <header class="white purple-background font-size-150 container padding-bot-1-rem padding-top-1-rem">
     Code Journal
+    <a class="entries-tab margin-left">Entries</a>
   </header>
   <main>
-    <div data-view="entry-form">
+    <div data-view="entry-form" id="entry-form" class="inactive">
       <div class="container">
         <form>
           <div class="row">
@@ -50,6 +51,33 @@
             <input type="submit" value="SAVE" id="save" class="button white purple-background">
           </div>
         </form>
+      </div>
+    </div>
+    <div data-view="entries" id="entries" class="active">
+      <div class="container padding-top-1-rem">
+        <div class="row">
+          <div class="column-always-half">
+            <h1>Entries</h1>
+          </div>
+          <div class="column-always-half row justify-right align-items-center">
+            <a class="new-entry-tab font-size-120 purple-background white border-radius-75">New</a>
+          </div>
+        </div>
+        <ul>
+          <!-- <div class="row margin-bot-2-rem">
+            <div class="column-half">
+              <img src="images/placeholder-image-square.jpg" id="tempstorage" class="margin-top-2-rem border-radius-75">
+            </div>
+            <div class="column-half">
+              <div class="row">
+                <h2 class="margin-top-2-rem padding-top-1-rem font-size-200 font-weight-600">Title</h2>
+              </div>
+              <div class="row">
+                <p class="font-size-120 margin-bot-2-rem"> asldkfklj </p>
+              </div>
+            </div>
+          </div> -->
+        </ul>
       </div>
     </div>
   </main>
