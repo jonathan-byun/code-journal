@@ -34,6 +34,8 @@ function store(e) {
   document.querySelector('ul').appendChild(appendNewObject);
   reset();
   resetInputs();
+  $entryForm.className = 'inactive';
+  $entries.className = 'active';
 }
 
 function addEntry(entry) {
