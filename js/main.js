@@ -35,8 +35,3 @@ function store(e) {
   reset();
   resetInputs();
 }
-
-window.addEventListener('beforeunload', function () {
-  var stringData = JSON.stringify(data);
-  localStorage.setItem('dataset', stringData);
-});
