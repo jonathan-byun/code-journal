@@ -59,10 +59,10 @@ function addEntry(entry) {
 }
 
 function appendEntry() {
-  var domTree = addEntry();
   for (let i = 0; i < data.entries.length; i++) {
+    var domTree = addEntry();
     document.querySelector('ul').appendChild(domTree);
   }
 }
 
-window.addEventListener('DOMcontentloaded', appendEntry);
+window.addEventListener('DOMContentLoaded', appendEntry);
