@@ -30,6 +30,18 @@ body {
   margin-top: 2rem;
 }
 
+.margin-left {
+  margin-left: 2rem;
+}
+
+.padding-top {
+  padding-top: 4px;
+}
+
+.padding-bot {
+  padding-bottom: 40px;
+}
+
 .padding-top-1-rem {
   padding-top: 1rem;
 }
@@ -97,5 +109,18 @@ ul {
 }
 
 .button:hover {
+  cursor: pointer;
+}
+
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}
+
+.entries-tab:hover {
+  color: rgb(240, 222, 206);
   cursor: pointer;
 }
