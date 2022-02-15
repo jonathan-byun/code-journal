@@ -16,9 +16,7 @@ function reset() {
 }
 
 function resetInputs() {
-  title.value = '';
-  notes.value = '';
-  photoInput.value = '';
+  document.querySelector('form').reset();
 }
 
 var form = document.querySelector('form');
