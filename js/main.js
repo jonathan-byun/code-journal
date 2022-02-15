@@ -57,4 +57,12 @@ function addEntry(entry) {
   innerRow.appendChild(paragraph);
   return outerRow;
 }
-addEntry();
+
+function appendEntry() {
+  var domTree = addEntry();
+  for (let i = 0; i < data.entries.length; i++) {
+    document.querySelector('ul').appendChild(domTree);
+  }
+}
+
+window.addEventListener('DOMcontentloaded', appendEntry);
