@@ -33,3 +33,28 @@ function store(e) {
   reset();
   resetInputs();
 }
+
+function addEntry(entry) {
+  var outerRow = document.createElement('div');
+  outerRow.className = 'row margin-bot-2-rem';
+  var columnHalf = document.createElement('div');
+  columnHalf.className = 'column-half';
+  outerRow.appendChild(columnHalf);
+  var image = document.createElement('img');
+  image.className = 'margin-top-2-rem border-radius-75';
+  columnHalf.appendChild(image);
+  var columnHalf2 = document.createElement('div');
+  columnHalf2.className = 'column-half';
+  outerRow.appendChild(columnHalf2);
+  var innerRow = document.createElement('div');
+  innerRow.className = 'row';
+  columnHalf2.appendChild(innerRow);
+  var header = document.createElement('h2');
+  header.className = 'margin-top-2-rem padding-top-1-rem font-size-200 font-weight-600';
+  innerRow.appendChild(header);
+  var paragraph = document.createElement('p');
+  paragraph.className = 'font-size-120 margin-bot-2-rem';
+  innerRow.appendChild(paragraph);
+  return outerRow;
+}
+addEntry();
