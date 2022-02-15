@@ -80,13 +80,14 @@ input:focus {
   outline-color: rgb(109, 21, 109);
 }
 
-button {
+.button {
   padding: 0.3rem 1rem;
   margin-bottom: 2rem;
   border-radius: 0.3rem;
   border-style: hidden;
+  width: 7rem;
 }
 
-button:hover {
+.button:hover {
   cursor: pointer;
 }
