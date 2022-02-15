@@ -6,6 +6,7 @@
   max-width: 575px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  background-color: rgb(245, 245, 245);
 }
 
 .row {
@@ -31,4 +32,8 @@
   .column-half {
     width: 50%;
   }
+}
+
+img {
+  width: 100%;
 }

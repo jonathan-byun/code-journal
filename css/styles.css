@@ -1,0 +1,89 @@
+body {
+  font-family: sans-serif;
+}
+
+.white {
+  color: white;
+}
+
+.purple-background {
+  background-color: rgb(86, 31, 150);
+}
+
+.font-size-150 {
+  font-size: 150%;
+}
+
+.font-size-120 {
+  font-size: 120%;
+}
+
+.margin-bot-2-rem {
+  margin-bottom: 2rem;
+}
+
+.padding-top-1-rem {
+  padding-top: 1rem;
+}
+
+.padding-bot-1-rem {
+  padding-bottom: 1rem;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+
+.border-radius-75 {
+  border-radius: 0.75rem;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.height {
+  height: 8rem;
+}
+
+.justify-right {
+  justify-content: right;
+}
+
+label {
+  flex-basis: 100%;
+}
+
+input {
+  width: 100%;
+  height: 2rem;
+  border-radius: 0.25rem;
+  border-style: ridge;
+  border-color: lightgrey;
+  padding-left: 10px;
+}
+
+textarea {
+  border-radius: 0.25rem;
+  border-style: ridge;
+  border-color: lightgrey;
+  resize: none;
+  padding: 7px 10px;
+}
+
+textarea:focus,
+input:focus {
+  outline-color: rgb(109, 21, 109);
+}
+
+.button {
+  padding: 0.3rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0.3rem;
+  border-style: hidden;
+  width: 7rem;
+}
+
+.button:hover {
+  cursor: pointer;
+}
