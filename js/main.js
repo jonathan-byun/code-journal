@@ -30,6 +30,8 @@ function store(e) {
   newObject.entryId = data.nextEntryId;
   data.nextEntryId++;
   data.entries.unshift(newObject);
+  var appendNewObject = addEntry(newObject);
+  document.querySelector('ul').appendChild(appendNewObject);
   reset();
   resetInputs();
 }
@@ -41,7 +43,7 @@ function addEntry(entry) {
   columnHalf.className = 'column-half';
   outerRow.appendChild(columnHalf);
   var image = document.createElement('img');
-  image.className = 'margin-top-2-rem border-radius-75';
+  image.className = 'border-radius-75';
   image.src = entry.photoURL;
   columnHalf.appendChild(image);
   var columnHalf2 = document.createElement('div');
@@ -79,4 +81,10 @@ var $entries = document.querySelector('#entries');
 $entriesTab.addEventListener('click', function () {
   $entryForm.className = 'inactive';
   $entries.className = 'active';
+});
+
+var $newEntryTab = document.querySelector('.new-entry-tab');
+$newEntryTab.addEventListener('click', function () {
+  $entryForm.className = 'active';
+  $entries.className = 'inactive';
 });

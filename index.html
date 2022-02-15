@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header class="white purple-background font-size-150 container padding-bot-1-rem padding-top-1-rem row">
+  <header class="white purple-background font-size-150 container padding-bot-1-rem padding-top-1-rem">
     Code Journal
     <a class="entries-tab margin-left">Entries</a>
   </header>
@@ -54,7 +54,15 @@
       </div>
     </div>
     <div data-view="entries" id="entries" class="inactive">
-      <div class="container margin-bot-2-rem">
+      <div class="container padding-top-1-rem">
+        <div class="row">
+          <div class="column-always-half">
+            <h1>Entries</h1>
+          </div>
+          <div class="column-always-half row justify-right align-items-center">
+            <a class="new-entry-tab font-size-120 purple-background white border-radius-75">New</a>
+          </div>
+        </div>
         <ul>
           <!-- <div class="row margin-bot-2-rem">
             <div class="column-half">

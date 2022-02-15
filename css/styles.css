@@ -34,14 +34,6 @@ body {
   margin-left: 2rem;
 }
 
-.padding-top {
-  padding-top: 4px;
-}
-
-.padding-bot {
-  padding-bottom: 40px;
-}
-
 .padding-top-1-rem {
   padding-top: 1rem;
 }
@@ -68,6 +60,18 @@ body {
 
 .justify-right {
   justify-content: right;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.new-entry-tab {
+  padding: 8px 20px;
+}
+
+.new-entry-tab:hover {
+  cursor: pointer;
 }
 
 label {
