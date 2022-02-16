@@ -42,6 +42,7 @@ function store(e) {
 function addEntry(entry) {
   var outerRow = document.createElement('div');
   outerRow.className = 'row margin-bot-2-rem';
+  outerRow.setAttribute('data-entry-id', data.entries.indexOf(entry));
   var columnHalf = document.createElement('div');
   columnHalf.className = 'column-half';
   outerRow.appendChild(columnHalf);
