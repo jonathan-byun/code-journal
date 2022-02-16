@@ -1,4 +1,7 @@
-body {
+header,
+a,
+h1,
+label {
   font-family: sans-serif;
 }
 
@@ -62,6 +65,10 @@ body {
   justify-content: right;
 }
 
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
 .align-items-center {
   align-items: center;
 }
@@ -71,6 +78,15 @@ body {
 }
 
 .new-entry-tab:hover {
+  cursor: pointer;
+}
+
+.edit-button {
+  margin-top: 1rem;
+  width: 4rem;
+}
+
+.edit-button:hover {
   cursor: pointer;
 }
 
