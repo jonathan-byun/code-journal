@@ -41,8 +41,8 @@ function store(e) {
 
 function addEntry(entry) {
   var outerRow = document.createElement('div');
-  outerRow.className = 'row margin-bot-2-rem';
-  outerRow.setAttribute('data-entry-id', data.entries.indexOf(entry));
+  outerRow.className = 'row margin-bot-2-rem entry-entity';
+  outerRow.setAttribute('data-entry-id', data.entries.length - data.entries.indexOf(entry));
   var columnHalf = document.createElement('div');
   columnHalf.className = 'column-half';
   outerRow.appendChild(columnHalf);
@@ -106,5 +106,10 @@ function editPage(e) {
   if (e.target.className === 'edit-button') {
     $entryForm.className = 'active';
     $entries.className = 'inactive';
+    data.editing = data.entries[data.entries.length - e.target.closest('.entry-entity').getAttribute('data-entry-id')];
+    title.value = data.editing.title;
+    photoInput.value = data.editing.photoURL;
+    notes.value = data.editing.notes;
+    photoMain.src = photoInput.value;
   }
 }
