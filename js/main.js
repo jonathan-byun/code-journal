@@ -65,7 +65,7 @@ function addEntry(entry) {
   innerRow.appendChild(imageColumn);
   var editButton = document.createElement('img');
   editButton.src = 'https://cdn.iconscout.com/icon/free/png-256/edit-2653317-2202989.png';
-  editButton.className = 'edit-button column-half';
+  editButton.className = 'edit-button';
   imageColumn.appendChild(editButton);
   var innerRow2 = document.createElement('div');
   innerRow2.className = 'row';
@@ -99,3 +99,12 @@ $newEntryTab.addEventListener('click', function () {
   $entryForm.className = 'active';
   $entries.className = 'inactive';
 });
+
+var $unorderedList = document.querySelector('ul');
+$unorderedList.addEventListener('click', editPage);
+function editPage(e) {
+  if (e.target.className === 'edit-button') {
+    $entryForm.className = 'active';
+    $entries.className = 'inactive';
+  }
+}
