@@ -1,5 +1,6 @@
 /* global data */
 /* exported data */
+var $unorderedList = document.querySelector('ul');
 var photoInput = document.querySelector('#photo');
 var photoMain = document.querySelector('#main-image');
 var title = document.querySelector('#title');
@@ -24,7 +25,8 @@ form.addEventListener('submit', store);
 function store(e) {
   e.preventDefault();
   if (data.editing !== null) {
-    var replaced = data.entries[data.entries.length - data.editing.entryId];
+    var entryPosition = data.entries.length - data.editing.entryId;
+    var replaced = data.entries[entryPosition];
     replaced.title = title.value;
     replaced.photoURL = photoInput.value;
     replaced.notes = notes.value;
@@ -32,6 +34,11 @@ function store(e) {
     resetInputs();
     $entryForm.className = 'inactive';
     $entries.className = 'active';
+    var $unorderedList = document.querySelector('ul');
+    var replacementTree = addEntry(replaced);
+    var replacedTree = $unorderedList.children[entryPosition];
+    $unorderedList.insertBefore(replacementTree, replacedTree);
+    replacedTree.remove();
   } else {
     var newObject = {};
     newObject.title = title.value;
@@ -41,7 +48,6 @@ function store(e) {
     data.nextEntryId++;
     data.entries.unshift(newObject);
     var appendNewObject = addEntry(newObject);
-    var $unorderedList = document.querySelector('ul');
     $unorderedList.prepend(appendNewObject);
     reset();
     resetInputs();
@@ -116,7 +122,6 @@ $newEntryTab.addEventListener('click', function () {
   data.editing = null;
 });
 
-var $unorderedList = document.querySelector('ul');
 $unorderedList.addEventListener('click', editPage);
 function editPage(e) {
   if (e.target.className === 'edit-button') {
