@@ -23,20 +23,32 @@ var form = document.querySelector('form');
 form.addEventListener('submit', store);
 function store(e) {
   e.preventDefault();
-  var newObject = {};
-  newObject.title = title.value;
-  newObject.photoURL = photoInput.value;
-  newObject.notes = notes.value;
-  newObject.entryId = data.nextEntryId;
-  data.nextEntryId++;
-  data.entries.unshift(newObject);
-  var appendNewObject = addEntry(newObject);
-  var $unorderedList = document.querySelector('ul');
-  $unorderedList.prepend(appendNewObject);
-  reset();
-  resetInputs();
-  $entryForm.className = 'inactive';
-  $entries.className = 'active';
+  if (data.editing !== null) {
+    var replaced = data.entries[data.entries.length - data.editing.entryId];
+    replaced.title = title.value;
+    replaced.photoURL = photoInput.value;
+    replaced.notes = notes.value;
+    reset();
+    resetInputs();
+    $entryForm.className = 'inactive';
+    $entries.className = 'active';
+  } else {
+    var newObject = {};
+    newObject.title = title.value;
+    newObject.photoURL = photoInput.value;
+    newObject.notes = notes.value;
+    newObject.entryId = data.nextEntryId;
+    data.nextEntryId++;
+    data.entries.unshift(newObject);
+    var appendNewObject = addEntry(newObject);
+    var $unorderedList = document.querySelector('ul');
+    $unorderedList.prepend(appendNewObject);
+    reset();
+    resetInputs();
+    $entryForm.className = 'inactive';
+    $entries.className = 'active';
+  }
+
 }
 
 function addEntry(entry) {
@@ -98,6 +110,10 @@ var $newEntryTab = document.querySelector('.new-entry-tab');
 $newEntryTab.addEventListener('click', function () {
   $entryForm.className = 'active';
   $entries.className = 'inactive';
+  resetInputs();
+  reset();
+  document.querySelector('#new-or-edit').textContent = 'New Entry';
+  data.editing = null;
 });
 
 var $unorderedList = document.querySelector('ul');
@@ -111,5 +127,6 @@ function editPage(e) {
     photoInput.value = data.editing.photoURL;
     notes.value = data.editing.notes;
     photoMain.src = photoInput.value;
+    document.querySelector('#new-or-edit').textContent = 'Edit Entry';
   }
 }
