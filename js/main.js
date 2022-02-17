@@ -116,6 +116,7 @@ $entriesTab.addEventListener('click', function () {
   $entries.className = 'active';
   $deleteButton.classList.remove('active');
   $deleteButton.classList.add('inactive');
+  data.editing = null;
 });
 
 var $newEntryTab = document.querySelector('.new-entry-tab');
@@ -158,4 +159,14 @@ $cancelButton.addEventListener('click', hideModal);
 function hideModal() {
   $modal.classList.remove('active-flex');
   $modal.classList.add('inactive');
+}
+
+var $confirmButton = document.querySelector('.confirm-button');
+$confirmButton.addEventListener('click', deleteEntry);
+function deleteEntry() {
+  var entryLength = data.entries.length;
+  var editEntryEntryID = data.editing.entryId;
+  data.entries.splice(entryLength - editEntryEntryID, 1);
+  var removedElement = $unorderedList.children[entryLength - editEntryEntryID];
+  removedElement.remove();
 }
