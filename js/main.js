@@ -5,6 +5,7 @@ var photoInput = document.querySelector('#photo');
 var photoMain = document.querySelector('#main-image');
 var title = document.querySelector('#title');
 var notes = document.querySelector('#notes');
+var $deleteButton = document.querySelector('.delete-button');
 photoInput.addEventListener('input', updatePhoto);
 function updatePhoto(e) {
   photoMain.src = e.target.value;
@@ -39,6 +40,8 @@ function store(e) {
     var replacedTree = $unorderedList.children[entryPosition];
     $unorderedList.insertBefore(replacementTree, replacedTree);
     replacedTree.remove();
+    $deleteButton.classList.add('inactive');
+    $deleteButton.classList.remove('active');
   } else {
     var newObject = {};
     newObject.title = title.value;
@@ -111,12 +114,17 @@ var $entries = document.querySelector('#entries');
 $entriesTab.addEventListener('click', function () {
   $entryForm.className = 'inactive';
   $entries.className = 'active';
+  $deleteButton.classList.remove('active');
+  $deleteButton.classList.add('inactive');
+  data.editing = null;
 });
 
 var $newEntryTab = document.querySelector('.new-entry-tab');
 $newEntryTab.addEventListener('click', function () {
   $entryForm.className = 'active';
   $entries.className = 'inactive';
+  $deleteButton.classList.remove('active');
+  $deleteButton.classList.add('inactive');
   resetInputs();
   reset();
   document.querySelector('#new-or-edit').textContent = 'New Entry';
@@ -128,6 +136,8 @@ function editPage(e) {
   if (e.target.className === 'edit-button') {
     $entryForm.className = 'active';
     $entries.className = 'inactive';
+    $deleteButton.classList.add('active');
+    $deleteButton.classList.remove('inactive');
     data.editing = data.entries[data.entries.length - e.target.closest('.entry-entity').getAttribute('data-entry-id')];
     title.value = data.editing.title;
     photoInput.value = data.editing.photoURL;
@@ -135,4 +145,28 @@ function editPage(e) {
     photoMain.src = photoInput.value;
     document.querySelector('#new-or-edit').textContent = 'Edit Entry';
   }
+}
+
+var $modal = document.querySelector('.modal');
+$deleteButton.addEventListener('click', showModal);
+function showModal() {
+  $modal.classList.add('active-flex');
+  $modal.classList.remove('inactive');
+}
+
+var $cancelButton = document.querySelector('.cancel-button');
+$cancelButton.addEventListener('click', hideModal);
+function hideModal() {
+  $modal.classList.remove('active-flex');
+  $modal.classList.add('inactive');
+}
+
+var $confirmButton = document.querySelector('.confirm-button');
+$confirmButton.addEventListener('click', deleteEntry);
+function deleteEntry() {
+  var entryLength = data.entries.length;
+  var editEntryEntryID = data.editing.entryId;
+  data.entries.splice(entryLength - editEntryEntryID, 1);
+  var removedElement = $unorderedList.children[entryLength - editEntryEntryID];
+  removedElement.remove();
 }
