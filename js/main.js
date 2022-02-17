@@ -24,6 +24,7 @@ var form = document.querySelector('form');
 form.addEventListener('submit', store);
 function store(e) {
   e.preventDefault();
+  var $unorderedList = document.querySelector('ul');
   if (data.editing !== null) {
     var entryPosition = data.entries.length - data.editing.entryId;
     var replaced = data.entries[entryPosition];
@@ -34,7 +35,6 @@ function store(e) {
     resetInputs();
     $entryForm.className = 'inactive';
     $entries.className = 'active';
-    var $unorderedList = document.querySelector('ul');
     var replacementTree = addEntry(replaced);
     var replacedTree = $unorderedList.children[entryPosition];
     $unorderedList.insertBefore(replacementTree, replacedTree);
@@ -67,6 +67,7 @@ function addEntry(entry) {
   var image = document.createElement('img');
   image.className = 'border-radius-75';
   image.src = entry.photoURL;
+  image.setAttribute('onerror', "this.onerror=null;this.src='images/placeholder-image-square.jpg'");
   columnHalf.appendChild(image);
   var columnHalf2 = document.createElement('div');
   columnHalf2.className = 'column-half';
