@@ -152,3 +152,10 @@ function showModal() {
   $modal.classList.add('active-flex');
   $modal.classList.remove('inactive');
 }
+
+var $cancelButton = document.querySelector('.cancel-button');
+$cancelButton.addEventListener('click', hideModal);
+function hideModal() {
+  $modal.classList.remove('active-flex');
+  $modal.classList.add('inactive');
+}
