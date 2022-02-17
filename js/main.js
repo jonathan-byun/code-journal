@@ -145,3 +145,10 @@ function editPage(e) {
     document.querySelector('#new-or-edit').textContent = 'Edit Entry';
   }
 }
+
+var $modal = document.querySelector('.modal');
+$deleteButton.addEventListener('click', showModal);
+function showModal() {
+  $modal.classList.add('active-flex');
+  $modal.classList.remove('inactive');
+}
