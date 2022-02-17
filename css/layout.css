@@ -18,6 +18,10 @@
   flex-basis: 50%;
 }
 
+.column-fourth {
+  flex-basis: 25%;
+}
+
 .column-full,
 .column-half {
   width: 100%;
