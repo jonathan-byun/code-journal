@@ -90,6 +90,15 @@ label {
   cursor: pointer;
 }
 
+.delete-button {
+  color: rgb(189, 0, 0);
+}
+
+.delete-button:hover {
+  cursor: pointer;
+  color: rgb(236, 0, 0);
+}
+
 label {
   flex-basis: 100%;
 }
